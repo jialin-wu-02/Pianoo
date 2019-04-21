@@ -1,0 +1,7 @@
+.WhiteKey button {
+	float: left;
+	border: 1px black solod;
+	height: 400px;
+	background-color: white;
+	width: 10%;
+}

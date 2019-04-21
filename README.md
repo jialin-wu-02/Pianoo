@@ -6,4 +6,4 @@ An online piano simulator, equipped with the following features:
 2. Convert numbered musical notations to songs.
 3. Convert piano songs to notations.
 
-Boosted by create-react-app and Radium.
+Boosted by create-react-app.
