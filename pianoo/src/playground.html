@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+.outer-container {
+    /*width: px;*/
+    position: relative;
+    background-color: black;
+    width: 50%;
+    height: 200px;
+}
+
+.box {
+	position: absolute;
+    border: 1px black solid;
+    height: 200px;
+    background-color: red;
+    width: 5%;
+}
+
+.box:nth-child(1) {
+    position: absolute;
+    border: 1px black solid;
+    height: 200px;
+    background-color: red;
+    width: 5%;
+    left: 10%;
+}
+.box:nth-child(2) {
+    position: absolute;
+    border: 1px black solid;
+    height: 200px;
+    background-color: red;
+    width: 5%;
+    left: 20%;
+}
+.box:nth-child(3) {
+    position: absolute;
+    border: 1px black solid;
+    height: 200px;
+    background-color: red;
+    width: 5%;
+    left: 30%;
+}
+.box:nth-child(4) {
+    position: absolute;
+    border: 1px black solid;
+    height: 200px;
+    background-color: red;
+    width: 5%;
+    left: 40%;
+}
+
+</style>
+</head>
+<body>
+
+<div class="outer-container">
+    <div class="container">
+      <button class="box"> 1 </button>
+      <button class="box"> 2 </button>
+      <button class="box"> 3 </button>
+      <button class="box"> 4 </button>
+    </div>
+</div>
+
+
+</body>
+</html>

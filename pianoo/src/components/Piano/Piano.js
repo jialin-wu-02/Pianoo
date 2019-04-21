@@ -1,21 +1,15 @@
 import React from 'react';
 import classes from './Piano.module.css';
-import WhiteKey from './Key/WhiteKey';
-import BlackKey from './Key/BlackKey';
+import Octave from './Octave/Octave';
 
+
+// piano contains at least one octave.
 const piano = (props) => {
-
-	const keys = [];
-
-	for (var i = 0; i < props.numberOfKeys; i++) {
-		keys.push(<WhiteKey />)
-	}
 
     return (
 		<div className={classes.Piano}>
-			{keys}
-			<BlackKey />
-
+			<Octave key="1"/>
+			<Octave key="2"/>
 		</div>
     );
 }
