@@ -3,9 +3,9 @@
   margin-top: 5%;
 }
 
-button:active,
-button:focus,
-button.active {
+div, button:active,
+div, button:focus,
+div, button.active {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: none;

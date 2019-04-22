@@ -9,8 +9,8 @@ const piano = (props) => {
 
     return (
 		<div className={classes.Piano}>
-			<Octave key="1"/>
-			<Octave key="2"/>
+			<Octave id="1" key="1"/>
+			<Octave id="2" key="2"/>
 			<WhiteKey className="LastWhiteKey"/>
 		</div>
     );

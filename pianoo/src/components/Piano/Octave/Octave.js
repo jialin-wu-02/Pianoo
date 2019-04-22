@@ -9,13 +9,13 @@ const octave = (props) => {
 	const keys = [];
 
 	for (var i = 0; i < 7; i++) {
-		keys.push(<WhiteKey key={"wk" + i} />)
+		keys.push(<WhiteKey key={props.id + "wk" + i} />)
 	}
 	
 	return (
 		<div className={classes.Octave}>
 			{keys}
-			<BlackKeys />
+			<BlackKeys octaveID={props.id} />
 		</div>
 	);
 }
