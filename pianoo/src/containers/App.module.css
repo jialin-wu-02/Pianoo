@@ -2,3 +2,12 @@
   text-align: center;
   margin-top: 5%;
 }
+
+button:active,
+button:focus,
+button.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}

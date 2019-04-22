@@ -1,5 +1,7 @@
 .Octave {
-	width: 100%;
+	width: 46.67%;
+	/* ((100 / (7 * number of octave + 1)) * 7) */
 	height: 100%;
 	position: relative;
+	float: left;
 }

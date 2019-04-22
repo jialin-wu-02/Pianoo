@@ -1,29 +1,41 @@
 .BlackKeys button {
 	position: absolute;
-	border: 1px black solid;
+	border: none;
 	height: 65%;
 	background-color: black;
+	text-decoration: none;
 	color: white;
 	width: 8%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+}
+
+.BlackKeys button:hover {
+	background-color: #292928;
+}
+
+.BlackKeys button:active {
+	background-color: #383737;
 }
 
 
 .BlackKeys button:nth-child(1) {
-  	left: 8.5%;
+  	left: 10.1%;
 }
 
 .BlackKeys button:nth-child(2) {
-  	left: 21.0%;
+  	left: 24.5%;
 }
 
 .BlackKeys button:nth-child(3) {
-  	left: 46.2%;
+  	left: 52.9%;
 }
 
 .BlackKeys button:nth-child(4) {
-  	left: 58.5%;
+  	left: 67.5%;
 }
 
 .BlackKeys button:nth-child(5) {
-  	left: 71.1%;
+  	left: 81.6%;
 }

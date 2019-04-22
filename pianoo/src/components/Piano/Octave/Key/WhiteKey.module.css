@@ -2,6 +2,38 @@
 	float: left;
 	border: 1px black solod;
 	height: 400px;
-	background-color: white;
-	width: 12.5%;
+	background-color: #ffffff;
+	width: 14.28%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
 }
+
+.LastWhiteKey button {
+	float: left;
+	border: 1px black solod;
+	height: 400px;
+	background-color: #ffffff;
+	width: 6.66%; /* (100 / (7 * number of octave + 1)) */
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+}
+
+.WhiteKey button:hover {
+	background-color: #f5f3f1;
+	/*#f0eeec;*/
+}
+
+.LastWhiteKey button:hover {
+	background-color: #f5f3f1;
+}
+
+.WhiteKey button:active {
+	background-color: #dbd9d8;
+}
+
+.LastWhiteKey button:active {
+	background-color: #dbd9d8;
+}
+
