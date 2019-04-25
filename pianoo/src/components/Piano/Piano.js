@@ -8,9 +8,10 @@ import WhiteKey from './Octave/Key/WhiteKey'
 const piano = (props) => {
 
     return (
+    	// props.keyPressed, i.e. "0wk3"
 		<div className={classes.Piano}>
-			<Octave id="1" key="1"/>
-			<Octave id="2" key="2"/>
+			<Octave keyPressed={props.keyPressed} id="1" key="1"/>
+			<Octave keyPressed="" id="2" key="2"/>
 			<WhiteKey className="LastWhiteKey"/>
 		</div>
     );

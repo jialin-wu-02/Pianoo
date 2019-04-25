@@ -1,3 +1,39 @@
+
+/* active class that can be selected */
+/* not the best code tbh */
+.a button {
+	position: absolute;
+	border: none;
+	height: 65%;
+	background-color: #383737;
+	text-decoration: none;
+	color: white;
+	width: 8%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+}
+
+.a button:nth-child(1) {
+  	left: 10.1%;
+}
+
+.a button:nth-child(2) {
+  	left: 24.5%;
+}
+
+.a button:nth-child(3) {
+  	left: 52.9%;
+}
+
+.a button:nth-child(4) {
+  	left: 67.5%;
+}
+
+.a button:nth-child(5) {
+  	left: 81.6%;
+}
+
 .BlackKeys button {
 	position: absolute;
 	border: none;

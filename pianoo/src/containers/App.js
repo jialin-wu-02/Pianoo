@@ -20,7 +20,6 @@ class App extends Component {
         // filled by the for loop.
       ],
       whiteButtonsOrder: [
-        // "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'"
         "Tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "Enter"
       ],
       blackButtonsOrder: [
@@ -31,7 +30,8 @@ class App extends Component {
       ], 
       nameOfBlackKeys: [
         "C#", "D#", "F#", "G#", "A#"
-      ]
+      ],
+      keyPressed: ""
     }
 
     // adding numberOfOctave * 7 white keys + the last key
@@ -53,38 +53,37 @@ class App extends Component {
         name: this.state.nameOfBlackKeys[j % 5] + Math.floor(j / 5)
       })
     }
-
     console.log(this.state.blackKeys);
-
   }
 
   keyDownHandler = (event) => {
     console.log(event.key);
     if (this.state.whiteButtonsOrder.includes(event.key)) {
       for (var m = 0; m < this.state.numberOfOctave * 7 + 1; m++) {
-
         if (this.state.whiteKeys[m].buttonPressed === event.key) {
-          console.log(this.state.whiteKeys[m].id);
+          this.setState({keyPressed: this.state.whiteKeys[m].id});
         }
       }
     } else if (this.state.blackButtonsOrder.includes(event.key)) {
       for (var n = 0; n < this.state.numberOfOctave * 5; n++) {
         if (this.state.blackKeys[n].buttonPressed === event.key) {
-          console.log(this.state.blackKeys[n].id);
+          this.setState({keyPressed: this.state.whiteKeys[n].id});
         }
       }
     }
   }
 
   render() {
+
+    console.log(this.state);
     return (
       <div tabIndex={-1} 
            onKeyDown={this.keyDownHandler}
            className={classes.App}>
-
-        <h1>  Pianoooo ■  ■  ■  ■  ■ </h1>
+        <h1> Pianoooo ■  ■  ■  ■  ■ </h1>
         <Piano
         	numberOfOctave={this.state.numberOfOctave}
+          keyPressed={this.state.keyPressed}
          />
       </div>
     );
