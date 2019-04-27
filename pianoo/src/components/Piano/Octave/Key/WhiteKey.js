@@ -5,13 +5,17 @@ const whiteKey = (props) => {
 
 	let lastOrNot = classes.WhiteKey;
 
+	if (props.keyPressed !== undefined && props.keyPressed.includes(props.keyID)) {
+		lastOrNot = classes.ActiveWhiteKey;
+	}
+
 	if (props.className === "LastWhiteKey") {
 		lastOrNot = classes.LastWhiteKey;
 	}
 
 	return (
 		<div className={lastOrNot}>
-			<button> this is a key. </button>
+			<button>  </button>
 		</div>
 	);
 }

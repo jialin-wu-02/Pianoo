@@ -31,7 +31,8 @@ class App extends Component {
       nameOfBlackKeys: [
         "C#", "D#", "F#", "G#", "A#"
       ],
-      keyPressed: ""
+      keyPressed: [],
+      buttonIDMap: new Map()
     }
 
     // adding numberOfOctave * 7 white keys + the last key
@@ -42,6 +43,7 @@ class App extends Component {
         buttonPressed: this.state.whiteButtonsOrder[i],
         name: this.state.nameOfWhiteKeys[i % 7] + Math.floor(i / 7)
       })
+      this.state.buttonIDMap.set(this.state.whiteButtonsOrder[i], id);
     }
 
     // adding numberOfOctave * 5 black keys
@@ -52,33 +54,39 @@ class App extends Component {
         buttonPressed: this.state.blackButtonsOrder[j],
         name: this.state.nameOfBlackKeys[j % 5] + Math.floor(j / 5)
       })
+      this.state.buttonIDMap.set(this.state.blackButtonsOrder[j], id);
     }
-    console.log(this.state.blackKeys);
   }
 
   keyDownHandler = (event) => {
-    console.log(event.key);
-    if (this.state.whiteButtonsOrder.includes(event.key)) {
-      for (var m = 0; m < this.state.numberOfOctave * 7 + 1; m++) {
-        if (this.state.whiteKeys[m].buttonPressed === event.key) {
-          this.setState({keyPressed: this.state.whiteKeys[m].id});
-        }
-      }
-    } else if (this.state.blackButtonsOrder.includes(event.key)) {
-      for (var n = 0; n < this.state.numberOfOctave * 5; n++) {
-        if (this.state.blackKeys[n].buttonPressed === event.key) {
-          this.setState({keyPressed: this.state.whiteKeys[n].id});
-        }
-      }
+    console.log(event.key + "Down");
+    if (this.state.buttonIDMap.has(event.key) && 
+      !(this.state.keyPressed.includes(this.state.buttonIDMap.get(event.key)))) {
+      this.setState({
+        keyPressed: [...this.state.keyPressed, this.state.buttonIDMap.get(event.key)]
+      })
+    }
+  }
+
+
+  keyUpHandler = (event) => {
+    console.log(event.key + "up");
+    if (this.state.buttonIDMap.has(event.key) && 
+      (this.state.keyPressed.includes(this.state.buttonIDMap.get(event.key)))) {
+        this.setState({keyPressed: this.state.keyPressed.filter(id => {
+          return id !== this.state.buttonIDMap.get(event.key);
+        })});
     }
   }
 
   render() {
 
-    console.log(this.state);
+    // console.log(this.state);
+
     return (
       <div tabIndex={-1} 
            onKeyDown={this.keyDownHandler}
+           onKeyUp={this.keyUpHandler}
            className={classes.App}>
         <h1> Pianoooo ■  ■  ■  ■  ■ </h1>
         <Piano

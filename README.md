@@ -10,7 +10,7 @@ An online piano simulator, equipped with the following features:
 
 ## Progress:
 1. [x] Basic Piano UIs.
-2. [ ] Support Touch Screen and Keyboard.
+2. [x] Multiple Keyboard Detections.
 3. [ ] Sounds
 4. [ ] UI Update for Convertion
 4. [ ] Convertion Functionality

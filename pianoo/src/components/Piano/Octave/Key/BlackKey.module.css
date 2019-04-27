@@ -1,0 +1,155 @@
+.first button:hover, .second button:hover, 
+.third button:hover, .fourth button:hover,
+.fifth button:hover {
+	background-color: #292928;
+}
+
+.first button:active, .second button:active,
+.third button:active, .fourth button:active,
+.fifth button:active {
+	background-color: #383737;
+}
+
+
+.first button {
+	position: absolute;
+	border: none;
+	height: 65%;
+	background-color: black;
+	text-decoration: none;
+	color: white;
+	width: 8%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+	left: 10.1%;
+}
+
+.second button {
+	position: absolute;
+	border: none;
+	height: 65%;
+	background-color: black;
+	text-decoration: none;
+	color: white;
+	width: 8%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+	left: 24.5%;
+}
+
+.third button {
+	position: absolute;
+	border: none;
+	height: 65%;
+	background-color: black;
+	text-decoration: none;
+	color: white;
+	width: 8%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+  	left: 52.9%;
+}
+
+.fourth button {
+	position: absolute;
+	border: none;
+	height: 65%;
+	background-color: black;
+	text-decoration: none;
+	color: white;
+	width: 8%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+  	left: 67.5%;
+}
+
+.fifth button {
+	position: absolute;
+	border: none;
+	height: 65%;
+	background-color: black;
+	text-decoration: none;
+	color: white;
+	width: 8%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+  	left: 81.6%;
+}
+
+
+/* Active */
+
+.firstActive button {
+	position: absolute;
+	border: none;
+	height: 65%;
+	background-color: #383737;
+	text-decoration: none;
+	color: white;
+	width: 8%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+	left: 10.1%;
+}
+
+.secondActive button {
+	position: absolute;
+	border: none;
+	height: 65%;
+	background-color: #383737;
+	text-decoration: none;
+	color: white;
+	width: 8%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+	left: 24.5%;
+}
+
+.thirdActive button {
+	position: absolute;
+	border: none;
+	height: 65%;
+	background-color: #383737;
+	text-decoration: none;
+	color: white;
+	width: 8%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+  	left: 52.9%;
+}
+
+.fourthActive button {
+	position: absolute;
+	border: none;
+	height: 65%;
+	background-color: #383737;
+	text-decoration: none;
+	color: white;
+	width: 8%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+  	left: 67.5%;
+}
+
+.fifthActive button {
+	position: absolute;
+	border: none;
+	height: 65%;
+	background-color: #383737;
+	text-decoration: none;
+	color: white;
+	width: 8%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+  	left: 81.6%;
+}

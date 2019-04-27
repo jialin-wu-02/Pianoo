@@ -9,7 +9,7 @@ const blackKeys = (props) => {
 	const keys = [];
 
 	for (var i = 0; i < 5; i++) {
-		keys.push(<button key={props.octaveID + "bk" + i}> A black key. </button>)
+		keys.push(<button key={props.octaveID + "bk" + i}> A black key. </button>);
 	}
 
     return (
