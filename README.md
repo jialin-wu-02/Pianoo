@@ -7,7 +7,7 @@ An online piano simulator, equipped with the following features:
 3. Convert piano songs to notations.
 4. (Perhaps) Support xml to piano songs. 
 5. (Perhaps) Provide a database for uses where songs can be stored.
-6. (Perhaps) Add notes songs that are stored.
+6. (Perhaps) Add notes to songs that are stored.
 
 ## Progress:
 1. [x] Basic Piano UIs.
