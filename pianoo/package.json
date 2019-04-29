@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jquery": "^3.4.0",
+    "moment": "^2.24.0",
     "rad": "^0.5.0",
     "radium": "^0.25.1",
     "react": "^16.8.6",
