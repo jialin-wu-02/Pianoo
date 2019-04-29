@@ -1,6 +1,23 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
 import Piano from '../components/Piano/Piano';
+// import Tone from 'tone';
+// import StartAudioContext from 'startaudiocontext';
+import a2 from '../assets/sounds/A2.mp3';
+import a3 from '../assets/sounds/A3.mp3';
+import b2 from '../assets/sounds/B2.mp3';
+import b3 from '../assets/sounds/B3.mp3';
+import c2 from '../assets/sounds/C2.mp3';
+import c3 from '../assets/sounds/C3.mp3';
+import c4 from '../assets/sounds/C4.mp3';
+import d2 from '../assets/sounds/D2.mp3';
+import d3 from '../assets/sounds/D3.mp3';
+import e2 from '../assets/sounds/E2.mp3';
+import e3 from '../assets/sounds/E3.mp3';
+import f2 from '../assets/sounds/F2.mp3';
+import f3 from '../assets/sounds/F3.mp3';
+import g2 from '../assets/sounds/G2.mp3';
+import g3 from '../assets/sounds/G3.mp3';
 
 class App extends Component {
 
@@ -32,7 +49,24 @@ class App extends Component {
         "C#", "D#", "F#", "G#", "A#"
       ],
       keyPressed: [],
-      buttonIDMap: new Map()
+      buttonIDMap: new Map(),
+      keySound: {
+        "0wk0": c2,
+        "0wk1": d2,
+        "0wk2": e2,
+        "0wk3": f2,
+        "0wk4": g2,
+        "0wk5": a2,
+        "0wk6": b2,
+        "1wk0": c3,
+        "1wk1": d3,
+        "1wk2": e3,
+        "1wk3": f3,
+        "1wk4": g3,
+        "1wk5": a3,
+        "1wk6": b3,
+        "1wk7": c4
+      }
     }
 
     // adding numberOfOctave * 7 white keys + the last key
@@ -60,12 +94,35 @@ class App extends Component {
 
   keyDownHandler = (event) => {
     console.log(event.key + "Down");
+    // StartAudioContext(Tone.context, 'div');
     if (this.state.buttonIDMap.has(event.key) && 
       !(this.state.keyPressed.includes(this.state.buttonIDMap.get(event.key)))) {
+      this.playSound(this.state.buttonIDMap.get(event.key));
       this.setState({
         keyPressed: [...this.state.keyPressed, this.state.buttonIDMap.get(event.key)]
       })
     }
+  }
+
+  playSound = (id) => {
+    var sound = new Audio(this.state.keySound[id]);
+    sound.play();
+
+    // perhaps tone.js approach?
+
+    // //create a synth and connect it to the master output (your speakers)
+    // var synth = new Tone.Synth().toMaster();
+
+    // //play a middle 'C' for the duration of an 8th note
+    // synth.triggerAttackRelease("C3", "8n");
+
+    // this.synth = SmapleLibrary.load({instruments: "piano"}).toMaster();
+
+    // playNote = (notename = 'C4', duration = '2n') => {
+    //   if (!this.synth) {
+    //     return this.synth.triggerAttackRelease(notename, duration);
+    //   }
+    // }
   }
 
 
@@ -80,9 +137,6 @@ class App extends Component {
   }
 
   render() {
-
-    // console.log(this.state);
-
     return (
       <div tabIndex={-1} 
            onKeyDown={this.keyDownHandler}
