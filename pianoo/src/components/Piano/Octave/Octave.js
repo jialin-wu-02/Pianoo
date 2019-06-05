@@ -12,6 +12,8 @@ const octave = (props) => {
 		keys.push(
 			<WhiteKey 
 			keyPressed={props.keyPressed} 
+			onMouseDown={props.mouseDown}
+			onMouseUp={props.mouseUp}
 			keyID={props.id + "wk" + i} 
 			key={props.id + "wk" + i} />
 		)
@@ -21,6 +23,8 @@ const octave = (props) => {
 		keys.push(
 			<BlackKey 
 			keyPressed={props.keyPressed} 
+			onMouseDown={props.mouseDown}
+			onMouseUp={props.mouseUp}
 			keyID={props.id + "bk" + j} 
 			key={props.id + "bk" + j} />
 		)

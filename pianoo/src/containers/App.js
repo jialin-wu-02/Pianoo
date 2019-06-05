@@ -3,6 +3,8 @@ import classes from './App.module.css';
 import Piano from '../components/Piano/Piano';
 // import Tone from 'tone';
 // import StartAudioContext from 'startaudiocontext';
+
+// white keys
 import a2 from '../assets/sounds/A2.mp3';
 import a3 from '../assets/sounds/A3.mp3';
 import b2 from '../assets/sounds/B2.mp3';
@@ -18,6 +20,18 @@ import f2 from '../assets/sounds/F2.mp3';
 import f3 from '../assets/sounds/F3.mp3';
 import g2 from '../assets/sounds/G2.mp3';
 import g3 from '../assets/sounds/G3.mp3';
+
+// black keys
+import as2 from '../assets/sounds/AS2.mp3';
+import as3 from '../assets/sounds/AS3.mp3';
+import cs2 from '../assets/sounds/CS2.mp3';
+import cs3 from '../assets/sounds/CS3.mp3';
+import ds2 from '../assets/sounds/DS2.mp3';
+import ds3 from '../assets/sounds/DS3.mp3';
+import fs2 from '../assets/sounds/FS2.mp3';
+import fs3 from '../assets/sounds/FS3.mp3';
+import gs2 from '../assets/sounds/GS2.mp3';
+import gs3 from '../assets/sounds/GS3.mp3';
 
 class App extends Component {
 
@@ -51,6 +65,7 @@ class App extends Component {
       keyPressed: [],
       buttonIDMap: new Map(),
       keySound: {
+        // white keys
         "0wk0": c2,
         "0wk1": d2,
         "0wk2": e2,
@@ -65,7 +80,19 @@ class App extends Component {
         "1wk4": g3,
         "1wk5": a3,
         "1wk6": b3,
-        "1wk7": c4
+        "1wk7": c4,
+        
+        // black keys
+        "0bk0": cs2,
+        "1bk0": cs3,
+        "0bk1": ds2,
+        "1bk1": ds3,
+        "0bk2": fs2,
+        "1bk2": fs3,
+        "0bk3": gs2,
+        "1bk3": gs3,
+        "0bk4": as2,
+        "1bk4": as3
       }
     }
 
@@ -92,8 +119,10 @@ class App extends Component {
     }
   }
 
+  // 1. key pressed (keyboard) add to the list
+  // 2. play the matching sound
   keyDownHandler = (event) => {
-    console.log(event.key + "Down");
+    console.log(event.key + " Down");
     // StartAudioContext(Tone.context, 'div');
     if (this.state.buttonIDMap.has(event.key) && 
       !(this.state.keyPressed.includes(this.state.buttonIDMap.get(event.key)))) {
@@ -104,6 +133,18 @@ class App extends Component {
     }
   }
 
+  // release the key pressed by deleting it from the list.
+  keyUpHandler = (event) => {
+    console.log(event.key + " up");
+    if (this.state.buttonIDMap.has(event.key) && 
+      (this.state.keyPressed.includes(this.state.buttonIDMap.get(event.key)))) {
+        this.setState({keyPressed: this.state.keyPressed.filter(id => {
+          return id !== this.state.buttonIDMap.get(event.key);
+        })});
+    }
+  }
+
+  // play the mp3 according to the matched ID of the key.
   playSound = (id) => {
     var sound = new Audio(this.state.keySound[id]);
     sound.play();
@@ -125,15 +166,9 @@ class App extends Component {
     // }
   }
 
-
-  keyUpHandler = (event) => {
-    console.log(event.key + "up");
-    if (this.state.buttonIDMap.has(event.key) && 
-      (this.state.keyPressed.includes(this.state.buttonIDMap.get(event.key)))) {
-        this.setState({keyPressed: this.state.keyPressed.filter(id => {
-          return id !== this.state.buttonIDMap.get(event.key);
-        })});
-    }
+  try = (event) => {
+    console.log("try triggered");
+    console.log(event.key + " try!");
   }
 
   render() {
@@ -144,6 +179,8 @@ class App extends Component {
            className={classes.App}>
         <h1> Pianoooo ■  ■  ■  ■  ■ </h1>
         <Piano
+          mouseDown={this.try}
+          // mouseUp={this.keyUpHandler}
         	numberOfOctave={this.state.numberOfOctave}
           keyPressed={this.state.keyPressed}
          />

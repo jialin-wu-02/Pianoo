@@ -1,6 +1,10 @@
 .App {
+  box-sizing: border-box;
   text-align: center;
-  margin-top: 5%;
+  padding-top: 5%;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
 }
 
 div, button:active,
