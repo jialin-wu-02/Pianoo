@@ -119,6 +119,11 @@ class App extends Component {
     }
   }
 
+  // 
+  mouseDownHandler = (event) => {
+
+  }
+
   // 1. key pressed (keyboard) add to the list
   // 2. play the matching sound
   keyDownHandler = (event) => {
@@ -148,25 +153,10 @@ class App extends Component {
   playSound = (id) => {
     var sound = new Audio(this.state.keySound[id]);
     sound.play();
-
-    // perhaps tone.js approach?
-
-    // //create a synth and connect it to the master output (your speakers)
-    // var synth = new Tone.Synth().toMaster();
-
-    // //play a middle 'C' for the duration of an 8th note
-    // synth.triggerAttackRelease("C3", "8n");
-
-    // this.synth = SmapleLibrary.load({instruments: "piano"}).toMaster();
-
-    // playNote = (notename = 'C4', duration = '2n') => {
-    //   if (!this.synth) {
-    //     return this.synth.triggerAttackRelease(notename, duration);
-    //   }
-    // }
   }
 
   try = (event) => {
+    // react context?
     console.log("try triggered");
     console.log(event.key + " try!");
   }

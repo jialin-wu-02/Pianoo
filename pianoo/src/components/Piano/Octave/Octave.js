@@ -11,10 +11,11 @@ const octave = (props) => {
 	for (var i = 0; i < 7; i++) {
 		keys.push(
 			<WhiteKey 
-			keyPressed={props.keyPressed} 
+			tabIndex={0}
+			keyPressed={props.keyPressed}
 			onMouseDown={props.mouseDown}
 			onMouseUp={props.mouseUp}
-			keyID={props.id + "wk" + i} 
+			keyID={props.id + "wk" + i}
 			key={props.id + "wk" + i} />
 		)
 	}
@@ -22,6 +23,7 @@ const octave = (props) => {
 	for (var j = 0; j < 5; j++) {
 		keys.push(
 			<BlackKey 
+			tabIndex={0}
 			keyPressed={props.keyPressed} 
 			onMouseDown={props.mouseDown}
 			onMouseUp={props.mouseUp}
