@@ -1,4 +1,4 @@
-# Pianoo ■  ■  ■  ■  ■ (Working On)
+# Pianoo ■  ■  ■  ■  ■
 
 ## Description:
 An online piano simulator, equipped with the following features:
@@ -10,7 +10,7 @@ An online piano simulator, equipped with the following features:
 6. (Perhaps) Add notes to songs that are stored.
 
 ## Progress:
-1. [x] Basic Piano UIs.
+1. [x] Piano UIs.
 2. [x] Multiple Keyboard Detections.
 3. [x] Sounds
 4. [ ] UI Update for Convertion
